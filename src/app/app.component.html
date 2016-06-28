@@ -5,13 +5,30 @@
     </button>
     <div class="collapse navbar-toggleable-xs">
       <div [collapse]="isNavbarCollapsed">
-        <a class="navbar-brand" [routerLink]="['']">{{api.title}}</a>
+        <a class="navbar-brand" [routerLink]="['']">{{ api.title }}</a>
         <ul class="nav navbar-nav">
-          <li class="nav-item active">
-            <a class="nav-link" [routerLink]="['']">Home</a>
+          <li *ngFor="let nav of navs.main" class="nav-item active">
+            <a class="nav-link" [routerLink]="[nav.link]">{{ 'NAV_MAIN_' + nav.name.toUpperCase() | translate }}</a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" [routerLink]="['about']">About</a>
+        </ul>
+        <ul class="nav navbar-nav pull-xs-right">
+          <li class="nav-item active">
+            <a class="nav-link">Profile</a>
+          </li>
+          <li class="nav-item active">
+            <a class="nav-link">Inbox</a>
+          </li>
+          <li class="nav-item active">
+            <a class="nav-link">Login</a>
+          </li>
+          <li class="nav-item active">
+            <a class="nav-link">Register</a>
+          </li>
+          <li class="nav-item active">
+            <a class="nav-link">Logout</a>
+          </li>
+          <li class="nav-item active">
+            <a class="nav-link">Settings</a>
           </li>
         </ul>
       </div>
@@ -23,6 +40,13 @@
 </main>
 <footer class="footer">
   <div class="container">
-    <a [href]="url">WindOJ</a>, an open-sourced online judge.
+    <nav class="nav nav-inline">
+      <li class="nav-item"><a [href]="url">WindOJ</a>, an open-sourced online judge.</li>
+      <li class="nav-item"><a class="nav-link" href="#">About</a></li>
+      <li class="nav-item"><a class="nav-link" href="#">Help</a></li>
+      <li class="nav-item"><a class="nav-link" href="#">Feedback</a></li>
+      <li class="nav-item"><a class="nav-link" href="#">TOS</a></li>
+      <li class="nav-item"><a class="nav-link" href="#">中文</a></li>
+    </nav>
   </div>
 </footer>
