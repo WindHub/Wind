@@ -7,7 +7,7 @@
       <div [collapse]="isNavbarCollapsed">
         <a class="navbar-brand" [routerLink]="['']">{{ api.title }}</a>
         <ul class="nav navbar-nav">
-          <li *ngFor="let nav of navs.main" class="nav-item active">
+          <li *ngFor="let nav of navs.main" class="nav-item" [routerLinkActive]="['active']">
             <a class="nav-link" [routerLink]="[nav.link]">{{ 'NAV_MAIN_' + nav.name.toUpperCase() | translate }}</a>
           </li>
         </ul>

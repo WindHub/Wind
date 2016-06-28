@@ -20,7 +20,6 @@ export class AppComponent {
 
   navs = {
     main: [
-      { name: 'home', link: '' },
       { name: 'problem', link: 'problem' },
       { name: 'contest', link: 'contest' },
       { name: 'status', link: 'status' },
@@ -31,7 +30,9 @@ export class AppComponent {
 
   isNavbarCollapsed: boolean = false;
 
-  constructor(private api: ApiService, private translate: TranslateService) {
+  constructor(
+    private api: ApiService,
+    private translate: TranslateService) {
     let userLang = navigator.language.split('-')[0];
     userLang = /(fr|en)/gi.test(userLang) ? userLang : 'en';
     translate.setDefaultLang('en');
