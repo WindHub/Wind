@@ -1,0 +1,54 @@
+<div class="jumbotron">
+  <div class="container">
+    <h1 class="display-3">Judges</h1>
+  </div>
+</div>
+<div class="container">
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>#</th>
+        <th class="hidden-md-down">Problem</th>
+        <th>User</th>
+        <th>Result</th>
+        <th class="hidden-md-down">Score</th>
+        <th class="hidden-md-down">Time</th>
+        <th class="hidden-md-down">Memory</th>
+        <th class="hidden-lg-down">Language</th>
+        <th class="hidden-lg-down">Code Length</th>
+        <th class="hidden-md-down">Submit Time</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let i of [1, 2, 3, 4, 5, 6, 7, 8]">
+        <th scope="row">{{ i }}</th>
+        <td class="hidden-md-down">A+B Problem</td>
+        <td>SkyZH</td>
+        <td><span class="label label-success">Accepted</span></td>
+        <td class="hidden-md-down">10/100</td>
+        <td class="hidden-md-down">123ms</td>
+        <td class="hidden-md-down">200KB</td>
+        <td class="hidden-lg-down">C++</td>
+        <td class="hidden-lg-down">233B</td>
+        <td class="hidden-md-down">9:30 AM</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<div class="container">
+  <div class="text-xs-center">
+    <ul class="pagination">
+      <li class="page-item">
+        <a class="page-link" href="#" aria-label="Previous">
+          <span>&laquo;</span>
+        </a>
+      </li>
+      <li class="page-item" *ngFor="let i of [1, 2, 3, 4, 5]"><a class="page-link" href="#">{{ i }}</a></li>
+      <li class="page-item">
+        <a class="page-link" href="#" aria-label="Next">
+          <span>&raquo;</span>
+        </a>
+      </li>
+    </ul>
+  </div>
+</div>

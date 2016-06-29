@@ -2,7 +2,13 @@
   "NAV_MAIN_HOME": "Home",
   "NAV_MAIN_PROBLEM": "Problem",
   "NAV_MAIN_CONTEST": "Contest",
-  "NAV_MAIN_STATUS": "Status",
+  "NAV_MAIN_JUDGE": "Judge",
   "NAV_MAIN_RANK": "Rank",
-  "NAV_MAIN_DISCUSS": "Discuss"
+  "NAV_MAIN_DISCUSS": "Discuss",
+  "NAV_USER_LOGIN": "Login",
+  "NAV_USER_REGISTER": "Register",
+  "NAV_USER_LOGOUT": "Logout",
+  "NAV_USER_INBOX": "Inbox",
+  "NAV_USER_SETTINGS": "Settings",
+  "NAV_USER_PROFILE": "Profile"
 }

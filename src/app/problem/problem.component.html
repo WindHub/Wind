@@ -3,3 +3,42 @@
     <h1 class="display-3">Problems</h1>
   </div>
 </div>
+<div class="container">
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>Name</th>
+        <th class="hidden-md-down">Type</th>
+        <th class="hidden-sm-down">State</th>
+        <th class="hidden-md-down">Submissions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let i of [1, 2, 3, 4, 5]">
+        <th scope="row">{{ i }}</th>
+        <td>A+B Problem</td>
+        <td class="hidden-md-down">Algorithm</td>
+        <td class="hidden-sm-down">Accepted</td>
+        <td class="hidden-md-down">10/100</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<div class="container">
+  <div class="text-xs-center">
+    <ul class="pagination">
+      <li class="page-item">
+        <a class="page-link" href="#" aria-label="Previous">
+          <span>&laquo;</span>
+        </a>
+      </li>
+      <li class="page-item" *ngFor="let i of [1, 2, 3, 4, 5]"><a class="page-link" href="#">{{ i }}</a></li>
+      <li class="page-item">
+        <a class="page-link" href="#" aria-label="Next">
+          <span>&raquo;</span>
+        </a>
+      </li>
+    </ul>
+  </div>
+</div>

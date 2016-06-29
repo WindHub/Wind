@@ -7,4 +7,7 @@ import '@angular/router';
 
 import 'rxjs';
 
-import 'bootstrap/dist/css/bootstrap.css';
+import 'ng2-translate/ng2-translate';
+import 'ng2-bootstrap/ng2-bootstrap';
+
+import 'bootstrap/dist/css/bootstrap.min.css';
