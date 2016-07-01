@@ -1,7 +1,7 @@
 {
-  "name": "window",
+  "name": "wind-ng",
   "version": "1.0.0",
-  "description": "An online judge",
+  "description": "An online judge, the frontend part",
   "main": "index.js",
   "scripts": {
     "clean": "rimraf node_modules doc dist && npm cache clean",
@@ -24,7 +24,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/WindHub/Window.git"
+    "url": "git+https://github.com/WindHub/wind-ng.git"
   },
   "keywords": [
     "judge",
@@ -36,9 +36,9 @@
   "author": "WindHub",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/WindHub/Window/issues"
+    "url": "https://github.com/WindHub/wind-ng/issues"
   },
-  "homepage": "https://github.com/WindHub/Window#readme",
+  "homepage": "https://github.com/WindHub/wind-ng#readme",
   "dependencies": {
     "@angular/common": "2.0.0-rc.3",
     "@angular/compiler": "2.0.0-rc.3",
@@ -58,7 +58,7 @@
   "devDependencies": {
     "angular2-template-loader": "^0.4.0",
     "autoprefixer": "^6.3.2",
-    "codelyzer": "0.0.23",
+    "codelyzer": "0.0.24",
     "copy-webpack-plugin": "^3.0.0",
     "css-loader": "^0.23.0",
     "extract-text-webpack-plugin": "^1.0.1",
@@ -69,7 +69,7 @@
     "jasmine-core": "^2.3.4",
     "jasmine-spec-reporter": "^2.4.0",
     "json-loader": "^0.5.3",
-    "karma": "1.0.0",
+    "karma": "1.1.0",
     "karma-chrome-launcher": "^1.0.1",
     "karma-coverage": "^1.0.0",
     "karma-jasmine": "^1.0.2",
@@ -86,7 +86,7 @@
     "raw-loader": "0.5.1",
     "remap-istanbul": "^0.6.4",
     "rimraf": "^2.5.1",
-    "sass-loader": "^3.1.2",
+    "sass-loader": "^4.0.0",
     "shelljs": "^0.7.0",
     "style-loader": "^0.13.0",
     "ts-helpers": "^1.1.1",

@@ -1,5 +1,5 @@
-# Window
+# wind-ng
 
-[![Dependency Status](https://david-dm.org/WindHub/Window.svg)](https://david-dm.org/WindHub/Window) [![devDependency Status](https://david-dm.org/WindHub/Window/dev-status.svg)](https://david-dm.org/WindHub/Window#info=devDependencies)
+[![Dependency Status](https://david-dm.org/WindHub/wind-ng.svg)](https://david-dm.org/WindHub/wind-ng) [![devDependency Status](https://david-dm.org/WindHub/wind-ng/dev-status.svg)](https://david-dm.org/WindHub/wind-ng#info=devDependencies)
 
 An online judge. This is the frontend based on Angular2.
