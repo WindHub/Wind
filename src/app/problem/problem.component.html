@@ -10,16 +10,20 @@
       <tr>
         <th>#</th>
         <th>Name</th>
-        <th class="hidden-md-down">Type</th>
+        <th class="hidden-md-down">Label</th>
         <th class="hidden-sm-down">State</th>
         <th class="hidden-md-down">Submissions</th>
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let i of [1, 2, 3, 4, 5]">
-        <th scope="row">{{ i }}</th>
-        <td>A+B Problem</td>
-        <td class="hidden-md-down">Algorithm</td>
+      <tr *ngFor="let problem of problems">
+        <th scope="row">{{ problem.id }}</th>
+        <td>{{ problem.name }}</td>
+        <td class="hidden-md-down">
+          <span class="label label-default" *ngFor="let label of problem.labels">
+            {{ label.name }}
+          </span>
+        </td>
         <td class="hidden-sm-down"><span class="label label-success">Accepted</span></td>
         <td class="hidden-md-down">10/100</td>
       </tr>
