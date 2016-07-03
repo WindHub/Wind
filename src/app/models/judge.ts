@@ -2,7 +2,7 @@ import { User } from './user';
 import { Problem } from './problem';
 
 export enum JudgeStatus {
-  pending = 1,
+  pending = 0,
   wait,
   ready,
   running,

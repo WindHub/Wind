@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { ROUTER_DIRECTIVES } from '@angular/router';
 import { TranslateService, TranslatePipe } from 'ng2-translate/ng2-translate';
-import { ApiService } from './shared';
+import { ApiService } from './util';
 
 import { NavbarComponent } from './navbar';
 
@@ -20,7 +20,8 @@ export class AppComponent {
 
   constructor(
     private api: ApiService,
-    private translate: TranslateService) {
+    private translate: TranslateService
+  ) {
     let userLang = navigator.language.split('-')[0];
     userLang = /(fr|en)/gi.test(userLang) ? userLang : 'en';
     translate.setDefaultLang('en');

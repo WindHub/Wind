@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { ROUTER_DIRECTIVES } from '@angular/router';
 import { DROPDOWN_DIRECTIVES } from 'ng2-bootstrap/ng2-bootstrap';
 import { TranslatePipe } from 'ng2-translate/ng2-translate';
-import { ApiService } from '../shared';
+import { ApiService } from '../util';
 
 @Component({
   selector: 'my-navbar',

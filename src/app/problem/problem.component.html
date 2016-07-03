@@ -4,7 +4,6 @@
   </div>
 </div>
 <div class="container">
-  <progress class="progress progress-striped progress-animated" value="10" max="100">10%</progress>
   <table class="table table-striped">
     <thead>
       <tr>
@@ -18,17 +17,28 @@
     <tbody>
       <tr *ngFor="let problem of problems">
         <th scope="row">{{ problem.id }}</th>
-        <td>{{ problem.name }}</td>
+        <td><a [routerLink]="'/problem/' + problem.id">{{ problem.name }}</a></td>
         <td class="hidden-md-down">
-          <span class="label label-default" *ngFor="let label of problem.labels">
+          <span
+            class="label label-default"
+            *ngFor="let label of problem.labels"
+            [ngClass]="{'label-default': label.type == 'type', 'label-primary': label.type == 'source'}">
             {{ label.name }}
           </span>
         </td>
-        <td class="hidden-sm-down"><span class="label label-success">Accepted</span></td>
-        <td class="hidden-md-down">10/100</td>
+        <td class="hidden-sm-down">
+          <span class="label" [ngClass]="'label-' + JudgeLabel[problem.state]">
+            {{ 'JUDGE_STATE_' + problem.state | translate}}
+          </span>
+        </td>
+        <td class="hidden-md-down">
+          <span>{{ problem.acratio }}%</span>
+          <span class="hidden-md-down"> ({{ problem.judge.ac }}/{{ problem.judge.sum }})</span>
+        </td>
       </tr>
     </tbody>
   </table>
+  <p class="text-xs-center" *ngIf="hiddencnt > 0"><em>{{ hiddencnt }} problems are hidden due to lack of permission.</em></p>
 </div>
 <div class="container">
   <div class="text-xs-center">

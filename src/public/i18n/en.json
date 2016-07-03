@@ -10,5 +10,17 @@
   "NAV_USER_LOGOUT": "Logout",
   "NAV_USER_INBOX": "Inbox",
   "NAV_USER_SETTINGS": "Settings",
-  "NAV_USER_PROFILE": "Profile"
+  "NAV_USER_PROFILE": "Profile",
+  "JUDGE_STATE_0": "Pending",
+  "JUDGE_STATE_1": "Waiting",
+  "JUDGE_STATE_2": "Ready",
+  "JUDGE_STATE_3": "Running",
+  "JUDGE_STATE_4": "Runtime Error",
+  "JUDGE_STATE_5": "Wrong Answer",
+  "JUDGE_STATE_6": "Time Limit Exceeded",
+  "JUDGE_STATE_7": "Memory Limit Exceeded",
+  "JUDGE_STATE_8": "Unknown",
+  "JUDGE_STATE_9": "Validator Error",
+  "JUDGE_STATE_10": "Accepted",
+  "JUDGE_STATE_11": "Presentation Error"
 }

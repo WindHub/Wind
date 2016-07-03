@@ -1,5 +1,6 @@
 import { Problem, ProblemLabel, ProblemPermission, ProblemData } from '../../models/problem';
 import { User } from '../../models/user';
+import { JudgeStatus } from '../../models/judge';
 
 export let apb_problem = new Problem(
   1,
@@ -18,14 +19,16 @@ export let apb_problem = new Problem(
     'tle': 10,
     'mle': 20,
     're': 5,
-    'pe': 2
+    'pe': 2,
+    'sum': 187
   }, [], [
     new ProblemData('1 2\n', '3\n'),
     new ProblemData('4 5\n', '9\n')
   ], [
     new User(1, 'SkyZH'),
     new User(5, 'CyanD1314')
-  ]
+  ],
+  JudgeStatus.ac
 );
 
 export let apbp_problem = new Problem(
@@ -46,7 +49,8 @@ export let apbp_problem = new Problem(
     'tle': 10,
     'mle': 20,
     're': 5,
-    'pe': 2
+    'pe': 2,
+    'sum': 52
   }, [
     new ProblemPermission(1, { exp: 20 })
   ], [
@@ -55,7 +59,8 @@ export let apbp_problem = new Problem(
     new ProblemData('233333333\n466666666\n', '699999999\n')
   ], [
     new User(5, 'CyanD1314')
-  ]
+  ],
+  JudgeStatus.mle
 );
 
 export let lsq_problem = new Problem(
