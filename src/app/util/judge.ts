@@ -1,4 +1,4 @@
-export const JudgeStatusLabel = [
+export const JudgeStateLabel = [
   'default',
   'info',
   'info',

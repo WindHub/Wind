@@ -1,5 +1,5 @@
 import { User } from './user';
-import { JudgeStatus } from './judge';
+import { JudgeState } from './judge';
 
 export class ProblemPermission {
   constructor(
@@ -34,6 +34,6 @@ export class Problem {
     public permissions?: ProblemPermission[],
     public data?: ProblemData[],
     public contributors?: User[],
-    public state?: JudgeStatus
+    public state?: JudgeState
  ) {}
 }

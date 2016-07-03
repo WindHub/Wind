@@ -3,7 +3,7 @@ import { ROUTER_DIRECTIVES } from '@angular/router';
 import { TranslatePipe } from 'ng2-translate/ng2-translate';
 
 import { Problem, ProblemLabel, ProblemPermission } from '../models/problem';
-import { JudgeStatusLabel } from '../util/judge';
+import { JudgeStateLabel } from '../util/judge';
 
 import * as TestProblems from '../test/problem';
 
@@ -17,7 +17,7 @@ import * as TestProblems from '../test/problem';
 export class ProblemComponent implements OnInit {
   private problems = null;
   private hiddencnt = 0;
-  private JudgeLabel = JudgeStatusLabel;
+  private JudgeLabel = JudgeStateLabel;
 
   ngOnInit() {
     let problems = [
