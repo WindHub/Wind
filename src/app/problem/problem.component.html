@@ -1,6 +1,6 @@
 <div class="jumbotron">
   <div class="container">
-    <h1 class="display-3">Problems</h1>
+    <h1 class="display-3">{{ 'PROBLEM_TITLE' | translate }}</h1>
   </div>
 </div>
 <div class="container">
@@ -8,10 +8,10 @@
     <thead>
       <tr>
         <th>#</th>
-        <th>Name</th>
-        <th class="hidden-md-down">Label</th>
-        <th class="hidden-sm-down">State</th>
-        <th class="hidden-md-down">Submissions</th>
+        <th>{{ 'PROBLEM_TITLE' | translate }}</th>
+        <th class="hidden-md-down">{{ 'PROBLEM_LABEL' | translate }}</th>
+        <th class="hidden-sm-down">{{ 'PROBLEM_STATE' | translate }}</th>
+        <th class="hidden-md-down">{{ 'PROBLEM_SUBMISSIONS' | translate }}</th>
       </tr>
     </thead>
     <tbody>
@@ -38,7 +38,7 @@
       </tr>
     </tbody>
   </table>
-  <p class="text-xs-center" *ngIf="hiddencnt > 0"><em>{{ hiddencnt }} problems are hidden due to lack of permission.</em></p>
+  <p class="text-xs-center" *ngIf="hiddencnt > 0"><em>{{ 'PROBLEM_HIDDEN' | translate: { cnt : hiddencnt } }}</em></p>
 </div>
 <div class="container">
   <div class="text-xs-center">

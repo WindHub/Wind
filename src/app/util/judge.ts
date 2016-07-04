@@ -1,8 +1,10 @@
 export const JudgeStateLabel = [
   'default',
+  'default',
   'info',
   'info',
-  'info',
+  'primary',
+  'danger',
   'danger',
   'danger',
   'danger',
