@@ -1,7 +1,7 @@
 import { provideRouter, RouterConfig } from '@angular/router';
 
 import { HomeComponent } from './home';
-import { ProblemComponent } from './problem';
+import { ProblemComponent, ProblemDetailComponent } from './problem';
 import { ContestComponent } from './contest';
 import { JudgeComponent } from './judge';
 import { AboutComponent } from './about';
@@ -9,6 +9,7 @@ import { AboutComponent } from './about';
 export const routes: RouterConfig = [
   { path: '', component: HomeComponent },
   { path: 'problem', component: ProblemComponent },
+  { path: 'problem/:id', component: ProblemDetailComponent },
   { path: 'contest', component: ContestComponent },
   { path: 'judge', component: JudgeComponent },
   { path: 'about', component: AboutComponent }

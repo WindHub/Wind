@@ -1,12 +1,16 @@
 import { Problem, ProblemLabel, ProblemPermission, ProblemData } from '../../models/problem';
 import { User } from '../../models/user';
-import { JudgeState } from '../../models/judge';
+import { JudgeState, JudgeLang } from '../../models/judge';
 
 export let apb_problem = new Problem(
   1,
   'A+B Problem',
   true,
-  'Very easy problem', [
+  'Very easy problem',
+  '', [
+    new ProblemData('Sample1', '1 2\n', '3\n'),
+    new ProblemData('Sample2', '4 5\n', '9\n')
+  ], [
     new ProblemLabel('source', 'WindOJ'),
     new ProblemLabel('type', 'Algorithm')
   ], {
@@ -22,11 +26,8 @@ export let apb_problem = new Problem(
     'pe': 2,
     'sum': 187
   }, [], [
-    new ProblemData('1 2\n', '3\n'),
-    new ProblemData('4 5\n', '9\n')
-  ], [
     new User(1, 'SkyZH'),
-    new User(5, 'CyanD1314')
+    new User(5, 'CyanD1317')
   ],
   JudgeState.ac
 );
@@ -35,14 +36,19 @@ export let apbp_problem = new Problem(
   2,
   'A+B Problem Plus',
   true,
-  'Very difficult problem', [
+  'Very difficult problem',
+  '', [
+    new ProblemData('Sample1', '1\n2\n', '3\n'),
+    new ProblemData('Sample2', '4\n5\n', '9\n'),
+    new ProblemData('Sample3', '233333333\n466666666\n', '699999999\n')
+  ], [
     new ProblemLabel('source', 'WindOJ'),
     new ProblemLabel('type', 'Algorithm'),
     new ProblemLabel('type', 'Math')
   ], {
     'time': 2000,
     'memory': 131072,
-    'language': ['c++', 'pascal']
+    'lang': [JudgeLang.gpp, JudgeLang.gpp11, JudgeLang.gcc, JudgeLang.cpp, JudgeLang.c, JudgeLang.pas, JudgeLang.java]
   }, {
     'ac': 5,
     'wa': 10,
@@ -54,11 +60,7 @@ export let apbp_problem = new Problem(
   }, [
     new ProblemPermission(1, { exp: 20 })
   ], [
-    new ProblemData('1\n2\n', '3\n'),
-    new ProblemData('4\n5\n', '9\n'),
-    new ProblemData('233333333\n466666666\n', '699999999\n')
-  ], [
-    new User(5, 'CyanD1314')
+    new User(5, 'CyanD1317')
   ],
   JudgeState.mle
 );

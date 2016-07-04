@@ -1,5 +1,5 @@
 {
-  "NAV_MAIN_HOME": "Home",
+  "NAV_MAIN_HOME": "Timeline",
   "NAV_MAIN_PROBLEM": "Problem",
   "NAV_MAIN_CONTEST": "Contest",
   "NAV_MAIN_JUDGE": "Judge",
@@ -22,5 +22,16 @@
   "JUDGE_STATE_8": "Unknown",
   "JUDGE_STATE_9": "Validator Error",
   "JUDGE_STATE_10": "Accepted",
-  "JUDGE_STATE_11": "Presentation Error"
+  "JUDGE_STATE_11": "Presentation Error",
+  "PROBLEM_LABEL_TYPE": "Type",
+  "PROBLEM_LABEL_SOURCE": "Source",
+  "JUDGE_LANG_0": "C++ (g++)",
+  "JUDGE_LANG_1": "C++11 (g++)",
+  "JUDGE_LANG_2": "C (gcc)",
+  "JUDGE_LANG_3": "C++ (clang)",
+  "JUDGE_LANG_4": "C (clang)",
+  "JUDGE_LANG_5": "Pascal",
+  "JUDGE_LANG_6": "Java",
+  "JUDGE_LANG_7": "Python2",
+  "JUDGE_LANG_8": "Python3"
 }

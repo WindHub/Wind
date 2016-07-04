@@ -1,0 +1,52 @@
+<div class="jumbotron">
+  <div class="container">
+    <h1 class="display-3">{{ problem.id }}# {{ problem.name }}</h1>
+    <div>
+      <span
+        class="label label-default"
+        *ngFor="let label of problem.labels"
+        [ngClass]="{'label-default': label.type == 'type', 'label-primary': label.type == 'source'}">
+        {{ 'PROBLEM_LABEL_' + label.type.toUpperCase() | translate }} {{ label.name }}
+      </span>
+    </div>
+    <div>
+      <span class="label label-info">Time Limit {{ problem.limits['time'] }}ms</span>
+      <span class="label label-info">Memory Limit {{ problem.limits['memory'] / 1024 }}MB</span>
+      <span class="label label-warning" *ngIf="langLimited">
+        <span *ngFor="let lang of problem.limits.lang; let i = index">
+          <span *ngIf="i > 0">|</span> {{ 'JUDGE_LANG_' + lang | translate }}
+        </span>
+      </span>
+      <span class="label label-warning" *ngIf="!langLimited">Language: All</span>
+    </div>
+  </div>
+</div>
+<div class="container">
+  <h1>Description</h1>
+  <p>{{ problem.content }}</p>
+  <h1>Sample</h1>
+  <div class="row" *ngFor="let data of problem.data">
+    <div class="col-xs-12 m-b-1">
+      <div class="card-group">
+        <div class="card">
+          <div class="card-header">
+            <span>{{ data.name }}</span> <small class="text-muted">Input</small>
+          </div>
+          <div class="card-block">
+            <samp class="card-text">{{ data.input }}</samp>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-header">
+            <span>{{ data.name }}</span> <small class="text-muted">Output</small>
+          </div>
+          <div class="card-block">
+            <samp class="card-text">{{ data.output }}</samp>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <h1>Hint</h1>
+  <p>{{ problem.hint }}</p>
+</div>
