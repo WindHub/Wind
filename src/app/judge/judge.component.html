@@ -12,25 +12,35 @@
         <th>User</th>
         <th>Result</th>
         <th class="hidden-md-down">Score</th>
-        <th class="hidden-md-down">Time</th>
-        <th class="hidden-md-down">Memory</th>
-        <th class="hidden-lg-down">Language</th>
-        <th class="hidden-lg-down">Code Length</th>
-        <th class="hidden-md-down">Submit Time</th>
+        <th class="hidden-md-down"><abbr title="Maximum Time">Time</abbr></th>
+        <th class="hidden-md-down"><abbr title="Maximum Memory">Mem</abbr></th>
+        <th class="hidden-lg-down"><abbr title="Language">Lang</abbr></th>
+        <th class="hidden-lg-down"><abbr title="Length">Len</abbr></th>
+        <th class="hidden-md-down">Submit</th>
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let i of [1, 2, 3, 4, 5, 6, 7, 8]">
-        <th scope="row">{{ i }}</th>
-        <td class="hidden-md-down">A+B Problem</td>
-        <td>SkyZH</td>
-        <td><span class="label label-success">Accepted</span></td>
-        <td class="hidden-md-down">10/100</td>
-        <td class="hidden-md-down">123ms</td>
-        <td class="hidden-md-down">200KB</td>
-        <td class="hidden-lg-down">C++</td>
-        <td class="hidden-lg-down">233B</td>
-        <td class="hidden-md-down">9:30 AM</td>
+      <tr *ngFor="let judge of judges">
+        <th scope="row">{{ judge.id }}</th>
+        <td class="hidden-md-down"><a [routerLink]="'/problem/' + judge.problem.id">{{ judge.problem.name }}</a></td>
+        <td><a [routerLink]="'/user/' + judge.user.id">{{ judge.user.name }}</a></td>
+        <td>
+          <span class="label" [ngClass]="'label-' + JudgeLabel[judge.state]">
+            {{ 'JUDGE_STATE_ABBR_' + judge.state | translate}}
+          </span>
+        </td>
+        <td class="hidden-md-down"><span>{{ judge.score }}/{{ judge.totalScore }}</span></td>
+        <td class="hidden-md-down">{{ judge.time }}ms</td>
+        <td class="hidden-md-down">
+          <span *ngIf="judge.memory < 16384">{{ judge.memory }}KB</span>
+          <span *ngIf="judge.memory >= 16384">{{ judge.memoryMB }}MB</span>
+        </td>
+        <td class="hidden-lg-down">{{ 'JUDGE_LANG_' + judge.lang | translate }}</td>
+        <td class="hidden-lg-down">
+          <a [routerLink]="'/judge/' + judge.id" *ngIf="judge.isAvailable">{{ judge.length }}B</a>
+          <span *ngIf="!judge.isAvailable">{{ judge.length }}B</span>
+        </td>
+        <td class="hidden-md-down">{{ judge.submittime | amDateFormat:'MM/DD HH:mm:ss' }}</td>
       </tr>
     </tbody>
   </table>

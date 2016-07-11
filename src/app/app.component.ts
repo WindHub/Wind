@@ -25,8 +25,10 @@ export class AppComponent {
     let userLang = navigator.language.split('-')[0];
     userLang = /(fr|en)/gi.test(userLang) ? userLang : 'en';
     translate.setDefaultLang('en');
-    translate.use(userLang);
+    if(localStorage.getItem('lang')) {
+      translate.use(localStorage.getItem('lang'));
+    } else {
+      translate.use(userLang);
+    }
   }
-
-
 }

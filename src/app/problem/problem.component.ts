@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { ROUTER_DIRECTIVES } from '@angular/router';
 import { TranslatePipe } from 'ng2-translate/ng2-translate';
 
-import { Problem } from '../models/problem';
 import { JudgeStateLabel } from '../util/judge';
 
 import * as TestProblems from '../test/problem';
@@ -15,11 +14,11 @@ import * as TestProblems from '../test/problem';
   directives: [...ROUTER_DIRECTIVES]
 })
 export class ProblemComponent implements OnInit {
-  private problems: Problem[];
+  private problems: any;
   private hiddencnt: number;
   private JudgeLabel: any;
 
-  ngOnInit() {
+  ngOnInit( ) {
     let problems = [
       TestProblems.apb_problem,
       TestProblems.apbp_problem,
@@ -30,7 +29,7 @@ export class ProblemComponent implements OnInit {
     this.hiddencnt = 0;
     for (let problem of problems) {
       if (problem.isAvailable) {
-        problem['acratio'] = Math.round(problem.judge['ac'] / problem.judge['sum'] * 1000) / 10;
+        problem['acratio'] = Math.round(problem['judge']['ac'] / problem['judge']['sum'] * 1000) / 10;
         this.problems.push(problem);
       } else {
         this.hiddencnt++;
@@ -38,9 +37,7 @@ export class ProblemComponent implements OnInit {
     }
   }
 
-  constructor(
-
-  ) {
+  constructor( ) {
     this.JudgeLabel = JudgeStateLabel;
   }
 

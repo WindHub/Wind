@@ -1,23 +1,26 @@
-import { Problem, ProblemLabel, ProblemPermission, ProblemData } from '../../models/problem';
-import { User } from '../../models/user';
 import { JudgeState, JudgeLang } from '../../models/judge';
 
-export let apb_problem = new Problem(
-  1,
-  'A+B Problem',
-  true,
-  'Very easy problem',
-  '', [
-    new ProblemData('Sample1', '1 2\n', '3\n'),
-    new ProblemData('Sample2', '4 5\n', '9\n')
-  ], [
-    new ProblemLabel('source', 'WindOJ'),
-    new ProblemLabel('type', 'Algorithm')
-  ], {
-    'time': 1000,
-    'memory': 65536,
-    'language': ['c++', 'pascal', 'python2', 'python3']
+export let apb_problem = {
+  id: 1,
+  name: 'A+B Problem',
+  isAvailable: true,
+  content: 'Very easy problem',
+  hint: '',
+  data: [{
+    name: 'Sample1',
+    input: '1 2\n',
+    output: '3\n'
   }, {
+    name: 'Sample2',
+    input: '4 5\n',
+    output: '9\n'
+  }],
+  labels: [{ type: 'source', name: 'WindOJ' }, { type: 'type', name: 'Algorithm' }],
+  limits: {
+    'time': 1000,
+    'memory': 65536
+  },
+  judge: {
     'ac': 100,
     'wa': 50,
     'tle': 10,
@@ -25,31 +28,41 @@ export let apb_problem = new Problem(
     're': 5,
     'pe': 2,
     'sum': 187
-  }, [], [
-    new User(1, 'SkyZH'),
-    new User(5, 'CyanD1317')
+  },
+  permissions: [],
+  contributors: [
+    {id: 1, name: 'SkyZH'},
+    {id: 5, name: 'CyanD1317'}
   ],
-  JudgeState.ac
-);
+  state: JudgeState.ac
+};
 
-export let apbp_problem = new Problem(
-  2,
-  'A+B Problem Plus',
-  true,
-  'Very difficult problem',
-  '', [
-    new ProblemData('Sample1', '1\n2\n', '3\n'),
-    new ProblemData('Sample2', '4\n5\n', '9\n'),
-    new ProblemData('Sample3', '233333333\n466666666\n', '699999999\n')
-  ], [
-    new ProblemLabel('source', 'WindOJ'),
-    new ProblemLabel('type', 'Algorithm'),
-    new ProblemLabel('type', 'Math')
-  ], {
-    'time': 2000,
-    'memory': 131072,
-    'lang': [JudgeLang.gpp, JudgeLang.gpp11, JudgeLang.gcc, JudgeLang.cpp, JudgeLang.c, JudgeLang.pas, JudgeLang.java]
+export let apbp_problem = {
+  id: 2,
+  name: 'A+B Problem Plus',
+  isAvailable: true,
+  content: 'Very difficult problem',
+  hint: '',
+  data: [{
+    name: 'Sample1',
+    input: '1 2\n',
+    output: '3\n'
   }, {
+    name: 'Sample2',
+    input: '4 5\n',
+    output: '9\n'
+  }, {
+    name: 'Sample3',
+    input: '233333333\n466666666\n',
+    output: '699999999\n'
+  }],
+  labels: [{ type: 'source', name: 'WindOJ' }, { type: 'type', name: 'Algorithm' }, { type: 'type', name: 'Math' }],
+  limits: {
+    'time': 1000,
+    'memory': 65536,
+    'lang': [JudgeLang.gpp, JudgeLang.gpp11, JudgeLang.gcc, JudgeLang.cpp, JudgeLang.c, JudgeLang.pas, JudgeLang.java]
+  },
+  judge: {
     'ac': 5,
     'wa': 10,
     'tle': 10,
@@ -57,22 +70,22 @@ export let apbp_problem = new Problem(
     're': 5,
     'pe': 2,
     'sum': 52
-  }, [
-    new ProblemPermission(1, { exp: 20 })
-  ], [
-    new User(5, 'CyanD1317')
+  },
+  permissions: [{ type: 1, data: { exp: 20 }}],
+  contributors: [
+    {id: 5, name: 'CyanD1317'}
   ],
-  JudgeState.mle
-);
+  state: JudgeState.mle
+};
 
-export let lsq_problem = new Problem(
-  3,
-  'lsq and osu!',
-  false
-);
+export let lsq_problem = {
+  id: 3,
+  name: 'lsq and osu!',
+  isAvailable: false
+};
 
-export let skyzh_problem = new Problem(
-  4,
-  'SkyZH and Touhou',
-  false
-);
+export let skyzh_problem = {
+  id: 4,
+  name: 'SkyZH and Touhou',
+  isAvailable: false
+};

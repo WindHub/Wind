@@ -19,15 +19,13 @@ export enum JudgeState {
 }
 
 export class JudgePoint {
-  constructor(
-    public id: number,
-    public name: string,
-    public state: JudgeState,
-    public time: number,
-    public memory: number,
-    public score: number,
-    public total: number
-  ) {}
+  public id: number;
+  public name: string;
+  public state: JudgeState;
+  public time: number;
+  public memory: number;
+  public score: number;
+  public total: number;
 }
 
 export enum JudgeLang {
@@ -50,19 +48,18 @@ export enum JudgeLang {
 }
 
 export class Judge {
-  constructor(
-   public id: number,
-   public user: User,
-   public problem: Problem,
-   public state: JudgeState,
-   public time: number,
-   public memory: number,
-   public language: JudgeLang,
-   public length: number,
-   public score: number,
-   public totalScore: number,
-   public submittime: number,
-   public points?: JudgePoint[],
-   public code?: string
- ) {}
+  public id: number;
+  public user: User;
+  public problem: Problem;
+  public state: JudgeState;
+  public time: number;
+  public memory: number;
+  public lang: JudgeLang;
+  public length: number;
+  public score: number;
+  public totalScore: number;
+  public submittime: number;
+  public points: JudgePoint[];
+  public code: string;
+  public isAvailable: boolean;
 }

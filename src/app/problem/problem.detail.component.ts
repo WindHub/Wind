@@ -3,8 +3,6 @@ import { ROUTER_DIRECTIVES } from '@angular/router';
 import { ActivatedRoute } from '@angular/router';
 import { TranslatePipe } from 'ng2-translate/ng2-translate';
 
-import { Problem } from '../models/problem';
-
 import * as TestProblems from '../test/problem';
 
 @Component({
@@ -15,7 +13,7 @@ import * as TestProblems from '../test/problem';
   directives: [...ROUTER_DIRECTIVES]
 })
 export class ProblemDetailComponent implements OnInit, OnDestroy {
-  private problem: Problem;
+  private problem: any;
   private sub: any;
   private langLimited: boolean;
 
