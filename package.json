@@ -50,6 +50,7 @@
     "angular2-moment": "^0.8.1",
     "bootstrap": "^4.0.0-alpha.2",
     "es6-shim": "^0.35.0",
+    "moment": "^2.14.1",
     "ng2-bootstrap": "^1.0.17",
     "ng2-translate": "^2.2.2",
     "reflect-metadata": "0.1.3",
