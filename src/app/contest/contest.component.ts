@@ -13,7 +13,7 @@ import * as TestContests from '../test/contest';
   templateUrl: './contest.component.html',
   styleUrls: ['./contest.component.scss'],
   pipes: [TranslatePipe, TimeAgoPipe, DurationPipe, DateFormatPipe],
-  directives: [...ROUTER_DIRECTIVES]
+  directives: [ROUTER_DIRECTIVES]
 })
 export class ContestComponent implements OnInit {
   private contests: any;
@@ -21,7 +21,7 @@ export class ContestComponent implements OnInit {
   private ContestState: any;
   private currentTime: any;
   private ContestClass: any;
-  
+
   constructor() {
     this.ContestState = ContestState;
     this.isClock = true;

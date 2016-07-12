@@ -10,7 +10,7 @@ import { ApiService } from '../util';
   styleUrls: ['./navbar.component.scss'],
   providers: [ApiService],
   pipes: [TranslatePipe],
-  directives: [...ROUTER_DIRECTIVES, ...DROPDOWN_DIRECTIVES]
+  directives: [ROUTER_DIRECTIVES, DROPDOWN_DIRECTIVES]
 })
 export class NavbarComponent {
 

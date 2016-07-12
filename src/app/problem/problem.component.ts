@@ -11,7 +11,7 @@ import * as TestProblems from '../test/problem';
   templateUrl: './problem.component.html',
   styleUrls: ['./problem.component.scss'],
   pipes: [TranslatePipe],
-  directives: [...ROUTER_DIRECTIVES]
+  directives: [ROUTER_DIRECTIVES]
 })
 export class ProblemComponent implements OnInit {
   private problems: any;

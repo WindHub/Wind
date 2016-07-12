@@ -12,7 +12,7 @@ import * as TestJudges from '../test/judge';
   templateUrl: './judge.component.html',
   styleUrls: ['./judge.component.scss'],
   pipes: [TranslatePipe, DateFormatPipe],
-  directives: [...ROUTER_DIRECTIVES]
+  directives: [ROUTER_DIRECTIVES]
 })
 export class JudgeComponent implements OnInit {
 

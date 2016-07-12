@@ -11,7 +11,7 @@ import '../style/app.scss';
   selector: 'my-app',
   providers: [ApiService],
   pipes: [TranslatePipe],
-  directives: [...ROUTER_DIRECTIVES, NavbarComponent],
+  directives: [ROUTER_DIRECTIVES, NavbarComponent],
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
 })

@@ -41,19 +41,5 @@
   <p class="text-xs-center" *ngIf="hiddencnt > 0"><em>{{ 'PROBLEM_HIDDEN' | translate: { cnt : hiddencnt } }}</em></p>
 </div>
 <div class="container">
-  <div class="text-xs-center">
-    <ul class="pagination">
-      <li class="page-item">
-        <a class="page-link" href="#" aria-label="Previous">
-          <span>&laquo;</span>
-        </a>
-      </li>
-      <li class="page-item" *ngFor="let i of [1, 2, 3, 4, 5]"><a class="page-link" href="#">{{ i }}</a></li>
-      <li class="page-item">
-        <a class="page-link" href="#" aria-label="Next">
-          <span>&raquo;</span>
-        </a>
-      </li>
-    </ul>
-  </div>
+  <p class="text-xs-center"><i class="fa fa-circle-o-notch fa-spin fa-fw fa-3x"></i></p>
 </div>
