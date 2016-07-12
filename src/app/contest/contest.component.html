@@ -12,6 +12,37 @@
 </div>
 <div class="container">
   <div class="card-columns">
-    <my-contest-abstract [contest]="contest"></my-contest-abstract>
+    <div class="card" *ngFor="let contest of contests">
+      <div class="card-header" [ngClass]="'bg-' + ContestClass[contest.state]">
+        {{ 'CONTEST_STATE_' + contest.state | translate }}
+      </div>
+      <div class="card-block">
+        <h4 class="card-title">{{ contest.name }}</h4>
+        <p class="card-text">{{ contest.description }}</p>
+        <a href="#" class="card-link" [routerLink]="'/contest/' + contest.id + '/enroll'" *ngIf="contest.state == ContestState.en">Enroll</a>
+        <a href="#" class="card-link" [routerLink]="'/contest/' + contest.id">Learn More</a>
+        <p class="card-text">
+          <small class="text-muted">
+            <span *ngIf="isClock && contest.state <= ContestState.en">Contest will begin {{ contest.startTime | amTimeAgo }}, last for {{ contest.endTime - contest.startTime | amDuration:'milliseconds' }}.</span>
+            <span *ngIf="isClock && contest.state > ContestState.en">Contest has begun {{ contest.startTime | amTimeAgo }}.</span>
+            <span *ngIf="!isClock">{{ contest.startTime | amDateFormat:'YYYY/MM/DD HH:mm' }}~{{ contest.endTime | amDateFormat:'MM/DD HH:mm' }}</span>
+            <span><a href="javascript:void(0)" (click)="isClock = !isClock"><i class="fa fa-clock-o" aria-hidden="true"></i></a></span>
+          </small>
+        </p>
+      </div>
+      <div class="card-footer" [ngClass]="'bg-' + ContestClass[contest.state]">
+        <span *ngIf="contest.state == ContestState.pd">
+          Enrollment will begin
+          <span *ngIf="isClock">{{ contest.enrollTime | amTimeAgo }}.</span>
+          <span *ngIf="!isClock">after {{ contest.enrollTime | amDateFormat:'MM/DD HH:mm' }}</span>
+        </span>
+        <span *ngIf="contest.state == ContestState.en">300 people have enrolled in.</span>
+        <span *ngIf="contest.state == ContestState.rn">
+          <span *ngIf="isClock">Contest will end in {{ contest.endTime - currentTime | amDuration:'milliseconds' }}.</span>
+          <span *ngIf="!isClock">Contest will end on {{ contest.endTime | amDateFormat:'MM/DD HH:mm' }}</span>
+        </span>
+        <span *ngIf="contest.state == ContestState.ed">End</span>
+      </div>
+    </div>
   </div>
 </div>

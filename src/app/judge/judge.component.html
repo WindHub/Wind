@@ -40,7 +40,7 @@
           <a [routerLink]="'/judge/' + judge.id" *ngIf="judge.isAvailable">{{ judge.length }}B</a>
           <span *ngIf="!judge.isAvailable">{{ judge.length }}B</span>
         </td>
-        <td class="hidden-md-down">{{ judge.submittime | amDateFormat:'MM/DD HH:mm:ss' }}</td>
+        <td class="hidden-md-down">{{ judge.submitTime | amDateFormat:'MM/DD HH:mm:ss' }}</td>
       </tr>
     </tbody>
   </table>

@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ROUTER_DIRECTIVES } from '@angular/router';
 import { TranslatePipe } from 'ng2-translate/ng2-translate';
-import { PROGRESSBAR_DIRECTIVES } from 'ng2-bootstrap/ng2-bootstrap';
 import { DateFormatPipe } from 'angular2-moment';
 
 import { JudgeStateLabel } from '../util/judge';
@@ -13,7 +12,7 @@ import * as TestJudges from '../test/judge';
   templateUrl: './judge.component.html',
   styleUrls: ['./judge.component.scss'],
   pipes: [TranslatePipe, DateFormatPipe],
-  directives: [...ROUTER_DIRECTIVES, ...PROGRESSBAR_DIRECTIVES]
+  directives: [...ROUTER_DIRECTIVES]
 })
 export class JudgeComponent implements OnInit {
 

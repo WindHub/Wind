@@ -58,7 +58,7 @@ export class Judge {
   public length: number;
   public score: number;
   public totalScore: number;
-  public submittime: number;
+  public submitTime: number;
   public points: JudgePoint[];
   public code: string;
   public isAvailable: boolean;

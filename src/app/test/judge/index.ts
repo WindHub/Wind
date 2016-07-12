@@ -14,7 +14,7 @@ for (let i = 1; i <= 10; i++) {
     length: 233,
     score: 50,
     totalScore: 100,
-    submittime: Date.now() - (i - 1) * 100000000,
+    submitTime: Date.now() - (i - 1) * 100000000,
     isAvailable: i > 4 ? true : false
   });
 }
