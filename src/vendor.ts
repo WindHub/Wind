@@ -12,5 +12,3 @@ import 'ng2-bootstrap/ng2-bootstrap';
 
 import * as moment from 'moment';
 import 'angular2-moment';
-
-import 'bootstrap/dist/css/bootstrap.min.css';
