@@ -25,7 +25,7 @@ export class JudgePoint {
   public time: number;
   public memory: number;
   public score: number;
-  public total: number;
+  public totalScore: number;
 }
 
 export enum JudgeLang {
@@ -61,5 +61,6 @@ export class Judge {
   public submitTime: number;
   public points: JudgePoint[];
   public code: string;
+  public detail: string;
   public isAvailable: boolean;
 }

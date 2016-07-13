@@ -1,6 +1,5 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
-import { ROUTER_DIRECTIVES } from '@angular/router';
-import { ActivatedRoute } from '@angular/router';
+import { ROUTER_DIRECTIVES, ActivatedRoute } from '@angular/router';
 import { TranslatePipe } from 'ng2-translate/ng2-translate';
 
 import * as TestProblems from '../test/problem';
@@ -16,6 +15,7 @@ export class ProblemDetailComponent implements OnInit, OnDestroy {
   private problem: any;
   private sub: any;
   private langLimited: boolean;
+  private langExpanded: boolean;
 
   ngOnInit() {
     let problems = [
@@ -32,6 +32,7 @@ export class ProblemDetailComponent implements OnInit, OnDestroy {
         this.langLimited = ('lang' in this.problem.limits);
       }
     });
+    this.langExpanded = false;
   }
   ngOnDestroy() {
     this.sub.unsubscribe();

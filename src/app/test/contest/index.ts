@@ -1,5 +1,3 @@
-import { Contest } from '../../models/contest';
-
 export let contests = [{
   id: 1,
   name: 'WindOJ Test Round',
@@ -8,7 +6,7 @@ export let contests = [{
   startTime: new Date('2016/07/12 7:00').getTime(),
   endTime: new Date('2016/07/12 19:00').getTime(),
   isAvailable: true
-},{
+}, {
   id: 2,
   name: 'EFZ #1',
   description: 'Very easy round',

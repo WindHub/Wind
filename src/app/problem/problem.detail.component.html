@@ -12,11 +12,15 @@
     <div>
       <span class="label label-info">{{ 'PROBLEM_TIME_LIMIT' | translate }} {{ problem.limits['time'] }}ms</span>
       <span class="label label-info">{{ 'PROBLEM_MEM_LIMIT' | translate }} {{ problem.limits['memory'] / 1024 }}MB</span>
-      <span class="label label-warning" *ngIf="langLimited">
-        <span *ngFor="let lang of problem.limits.lang; let i = index">
-          <span *ngIf="i > 0">|</span> {{ 'JUDGE_LANG_' + lang | translate }}
+      <a class="label label-warning" *ngIf="langLimited" href="javascript:void(0)" (click)="langExpanded = !langExpanded">
+        <span *ngIf="!langExpanded">{{ problem.limits['lang'].length }} Languages Allowed  <i class="fa fa-angle-double-right"></i></span>
+        <span *ngIf="langExpanded">
+          <span *ngFor="let lang of problem.limits.lang; let i = index">
+            <span *ngIf="i > 0">|</span> {{ 'JUDGE_LANG_' + lang | translate }}
+          </span>
+          <i class="fa fa-angle-double-left"></i>
         </span>
-      </span>
+      </a>
       <span class="label label-warning" *ngIf="!langLimited">{{ 'PROBLEM_LANG_LIMIT' | translate }} {{ 'PROBLEM_LANG_LIMIT_ALL' | translate }}</span>
     </div>
   </div>

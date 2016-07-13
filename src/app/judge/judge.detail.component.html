@@ -1,0 +1,105 @@
+<div class="jumbotron">
+  <div class="container">
+    <h1 class="display-3">{{ 'JUDGE_DETAIL_TITLE' | translate }} #{{ judge.id }}</h1>
+  </div>
+</div>
+<div class="container">
+  <div class="row">
+    <div class="col-md-4">
+      <div class="card">
+        <div class="card-header">
+          Log
+        </div>
+        <div class="card-block">
+          <pre class="card-text">{{ judge.detail }}</pre>
+        </div>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item"><i class="fa fa-question-circle-o" aria-hidden="true"></i> <a [routerLink]="'/problem/' + judge.problem.id">{{ judge.problem.name }}</a></li>
+          <li class="list-group-item"><i class="fa fa-user" aria-hidden="true"></i> <a [routerLink]="'/user/' + judge.user.id">{{ judge.user.name }}</a></li>
+          <li class="list-group-item">
+            <i class="fa fa-clock-o" aria-hidden="true"></i> <span>{{ judge.submitTime | amDateFormat:'MM/DD HH:mm:ss' }}</span>
+            <small class="text-muted">({{ judge.submitTime | amTimeAgo }})</small>
+          </li>
+          <li class="list-group-item"><i class="fa fa-keyboard-o" aria-hidden="true"></i> {{ 'JUDGE_LANG_' + judge.lang | translate }}</li>
+          <li class="list-group-item"><i class="fa fa-code" aria-hidden="true"></i> {{ judge.length }}B</li>
+        </ul>
+      </div>
+    </div>
+    <div class="col-md-8">
+      <div class="card">
+        <div class="card-header">
+          Summary
+        </div>
+        <table class="table">
+          <thead>
+            <tr>
+              <th>Result</th>
+              <th class="hidden-md-down">Score</th>
+              <th class="hidden-md-down"><abbr title="Maximum Time">Time</abbr></th>
+              <th class="hidden-md-down"><abbr title="Maximum Memory">Memory</abbr></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>
+                <span class="label" [ngClass]="'label-' + JudgeLabel[judge.state]">
+                  {{ 'JUDGE_STATE_ABBR_' + judge.state | translate}}
+                </span>
+              </td>
+              <td class="hidden-md-down"><span>{{ judge.score }}/{{ judge.totalScore }}</span></td>
+              <td class="hidden-md-down">{{ judge.time }}ms</td>
+              <td class="hidden-md-down">
+                <span *ngIf="judge.memory < 16384">{{ judge.memory }}KB</span>
+                <span *ngIf="judge.memory >= 16384">{{ judge.memoryMB }}MB</span>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="card">
+        <div class="card-header">
+          Code
+        </div>
+        <div class="card-block">
+          <pre>{{ judge.code }}</pre>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="container">
+  <div class="card">
+    <div class="card-header">
+      Points
+    </div>
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>#</th>
+          <th class="hidden-md-down">Name</th>
+          <th>Result</th>
+          <th>Score</th>
+          <th class="hidden-md-down">Time</th>
+          <th class="hidden-md-down">Memory</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let point of judge.points">
+          <th scope="row">{{ point.id }}</th>
+          <td class="hidden-md-down">{{ point.name }}</td>
+          <td>
+            <span class="label" [ngClass]="'label-' + JudgeLabel[point.state]">
+              {{ 'JUDGE_STATE_' + point.state | translate}}
+            </span>
+          </td>
+          <td><span>{{ point.score }}/{{ point.totalScore }}</span></td>
+          <td class="hidden-md-down">{{ point.time }}ms</td>
+          <td class="hidden-md-down">
+            <span *ngIf="point.memory < 16384">{{ point.memory }}KB</span>
+            <span *ngIf="point.memory >= 16384">{{ point.memoryMB }}MB</span>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

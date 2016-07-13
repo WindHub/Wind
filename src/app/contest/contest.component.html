@@ -24,10 +24,11 @@
         <p class="card-text">
           <small class="text-muted">
             <span *ngIf="isClock && contest.state <= ContestState.en">Contest will begin {{ contest.startTime | amTimeAgo }}, last for {{ contest.endTime - contest.startTime | amDuration:'milliseconds' }}.</span>
-            <span *ngIf="isClock && contest.state > ContestState.en">Contest has begun {{ contest.startTime | amTimeAgo }}.</span>
+            <span *ngIf="isClock && contest.state == ContestState.rn">Contest has begun {{ contest.startTime | amTimeAgo }}.</span>
+            <span *ngIf="isClock && contest.state == ContestState.ed">Contest ended {{ contest.endTime | amTimeAgo }}.</span>
             <span *ngIf="!isClock">{{ contest.startTime | amDateFormat:'YYYY/MM/DD HH:mm' }}~{{ contest.endTime | amDateFormat:'MM/DD HH:mm' }}</span>
-            <span><a href="javascript:void(0)" (click)="isClock = !isClock"><i class="fa fa-clock-o" aria-hidden="true"></i></a></span>
           </small>
+          <span><a href="javascript:void(0)" (click)="isClock = !isClock"><i class="fa fa-clock-o" aria-hidden="true"></i></a></span>
         </p>
       </div>
       <div class="card-footer" [ngClass]="'bg-' + ContestClass[contest.state]">
@@ -36,12 +37,12 @@
           <span *ngIf="isClock">{{ contest.enrollTime | amTimeAgo }}.</span>
           <span *ngIf="!isClock">after {{ contest.enrollTime | amDateFormat:'MM/DD HH:mm' }}</span>
         </span>
-        <span *ngIf="contest.state == ContestState.en">300 people have enrolled in.</span>
+        <span *ngIf="contest.state == ContestState.en">300 users have enrolled in.</span>
         <span *ngIf="contest.state == ContestState.rn">
           <span *ngIf="isClock">Contest will end in {{ contest.endTime - currentTime | amDuration:'milliseconds' }}.</span>
           <span *ngIf="!isClock">Contest will end on {{ contest.endTime | amDateFormat:'MM/DD HH:mm' }}</span>
         </span>
-        <span *ngIf="contest.state == ContestState.ed">End</span>
+        <span *ngIf="contest.state == ContestState.ed">300 users took part in this contest.</span>
       </div>
     </div>
   </div>
