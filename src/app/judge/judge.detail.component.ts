@@ -1,6 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { ROUTER_DIRECTIVES, ActivatedRoute } from '@angular/router';
-import { NgForm }    from '@angular/forms';
 
 import { TranslatePipe } from 'ng2-translate/ng2-translate';
 import { DateFormatPipe, TimeAgoPipe } from 'angular2-moment';
@@ -21,7 +20,7 @@ import * as TestJudges from '../test/judge';
   pipes: [TranslatePipe, DateFormatPipe, TimeAgoPipe],
   directives: [ROUTER_DIRECTIVES, Codemirror]
 })
-export class JudgeDetailComponent implements OnInit {
+export class JudgeDetailComponent implements OnInit, OnDestroy {
   private judge: any;
   private sub: any;
   private codeConfig: any;
@@ -48,5 +47,9 @@ export class JudgeDetailComponent implements OnInit {
         readOnly: true
       };
     });
+  }
+
+  ngOnDestroy() {
+    this.sub.unsubscribe();
   }
 }

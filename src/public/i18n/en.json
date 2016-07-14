@@ -69,7 +69,7 @@
   "CONTEST_STATE_0": "Pending",
   "CONTEST_STATE_1": "Enrolling",
   "CONTEST_STATE_2": "Running",
-  "CONTEST_STATE_3": "End",
+  "CONTEST_STATE_3": "Already End",
   "JUDGE_TITLE": "Judges",
   "JUDGE_DETAIL_TITLE": "Judge",
   "FOOTER_ABOUT": "About",

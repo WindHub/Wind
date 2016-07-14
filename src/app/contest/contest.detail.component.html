@@ -1,0 +1,60 @@
+<div class="jumbotron">
+  <div class="container">
+    <h1 class="display-3">{{ contest.name }}</h1>
+  </div>
+</div>
+<div class="container">
+  <div class="row">
+    <div class="col-md-4">
+      <div class="card">
+        <div class="card-header">
+          Summary
+        </div>
+        <div class="card-block" [ngClass]="'bg-' + ContestClass[contest.state]">
+          {{ 'CONTEST_STATE_' + contest.state | translate }}
+        </div>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item">
+            Enroll at {{ contest.enrollTime | amDateFormat:'YY/MM/DD HH:mm' }} <small>({{ contest.enrollTime | amTimeAgo }})</small>
+          </li>
+          <li class="list-group-item">
+            Begin at {{ contest.startTime | amDateFormat:'YY/MM/DD HH:mm' }}
+            <small>({{ contest.startTime | amTimeAgo }})</small>
+          </li>
+          <li class="list-group-item">
+            End at {{ contest.endTime | amDateFormat:'YY/MM/DD HH:mm' }}
+            <small>({{ contest.endTime | amTimeAgo }})</small>
+          </li>
+          <li class="list-group-item">
+            Duration is {{ contest.endTime - contest.startTime | amDuration:'milliseconds' }}
+          </li>
+        </ul>
+        <div class="card-block" *ngIf="contest.state == ContestState.en">
+          <a class="btn btn-lg btn-primary btn-block" [routerLink]="'/contest/' + contest.id + '/enroll'">Enroll</a>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-8">
+      <h1>Description</h1>
+      <p>{{ contest.abstract }}</p>
+      <div [innerHTML]="contest.description"></div>
+      <h1>Problems</h1>
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Name</th>
+            <th class="hidden-md-down" *ngIf="contest.state == ContestState.rn">Submissions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let problem of contest.problems">
+            <th scope="row">{{ problem.cid }}</th>
+            <td><a [routerLink]="'/contest/' + contest.id + '/problem/' + problem.id">{{ problem.name }}</a></td>
+            <td class="hidden-md-down" *ngIf="contest.state == ContestState.rn">{{ problem.judge.sum }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
