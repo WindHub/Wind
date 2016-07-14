@@ -25,6 +25,7 @@ export class JudgeDetailComponent implements OnInit, OnDestroy {
   private sub: any;
   private codeConfig: any;
   private JudgeLabel: any;
+  private codeExpanded: boolean;
 
   constructor(
     private route: ActivatedRoute
@@ -44,8 +45,10 @@ export class JudgeDetailComponent implements OnInit, OnDestroy {
         lineNumbers: true,
         mode: CodeLanguageMIME[this.judge['lang']],
         cursorHeight: 0,
-        readOnly: true
+        readOnly: true,
+        viewportMargin: Infinity
       };
+      this.codeExpanded = false;
     });
   }
 

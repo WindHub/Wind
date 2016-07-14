@@ -11,7 +11,6 @@ import * as TestContests from '../test/contest';
 @Component({
   selector: 'my-contest-detail',
   templateUrl: './contest.detail.component.html',
-  styleUrls: ['./contest.component.scss'],
   pipes: [TranslatePipe, TimeAgoPipe, DurationPipe, DateFormatPipe],
   directives: [ROUTER_DIRECTIVES]
 })
@@ -21,6 +20,7 @@ export class ContestDetailComponent implements OnInit, OnDestroy {
   private ContestClass: any;
   private sub: any;
   private contest: Contest;
+  private isProblemAvailable: boolean;
 
   constructor(
     private route: ActivatedRoute
@@ -37,10 +37,15 @@ export class ContestDetailComponent implements OnInit, OnDestroy {
       this.contest = <Contest>TestContests.contests[id - 1];
       this.contest['state'] = getContestState(this.contest, this.currentTime);
 
-      let __i = 0;
-      for (let problem of this.contest.problems) {
-        problem['cid'] = String.fromCharCode(65 + __i);
-        __i++;
+      if (this.contest.problems) {
+        let __i = 0;
+        for (let problem of this.contest.problems) {
+          problem['cid'] = String.fromCharCode(65 + __i);
+          __i++;
+        }
+        this.isProblemAvailable = true;
+      } else {
+        this.isProblemAvailable = false;
       }
     });
   }

@@ -11,7 +11,6 @@ import * as TestContests from '../test/contest';
 @Component({
   selector: 'my-contest',
   templateUrl: './contest.component.html',
-  styleUrls: ['./contest.component.scss'],
   pipes: [TranslatePipe, TimeAgoPipe, DurationPipe, DateFormatPipe],
   directives: [ROUTER_DIRECTIVES]
 })

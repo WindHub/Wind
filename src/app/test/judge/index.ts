@@ -31,7 +31,7 @@ for (let i = 1; i <= 10; i++) {
     submitTime: Date.now() - (i - 1) * 100000000,
     isAvailable: i > 4 ? true : false,
     points: i > 4 ? __test_points : [],
-    code: '#include<iostream>\nusing namespace std;\nint main() {\n    int a, b;\n    cin >> a >> b;\n    cout << a + b << endl;\n    return 0;\n}\n\n\n\n\n\n\n\n\n\n\n\n',
+    code: '#include<iostream>\nusing namespace std;\nint main() {\n    int a, b;\n    cin >> a >> b;\n    cout << a + b << endl;\n    return 0;\n\n\n\n\n\n\n\n\n\n\n\n\n}',
     detail: 'Judged by Official Judger\n'
   });
 }

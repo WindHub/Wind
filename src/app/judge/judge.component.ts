@@ -9,7 +9,6 @@ import * as TestJudges from '../test/judge';
 @Component({
   selector: 'my-judge',
   templateUrl: './judge.component.html',
-  styleUrls: ['./judge.component.scss'],
   pipes: [TranslatePipe, DateFormatPipe],
   directives: [ROUTER_DIRECTIVES]
 })
@@ -24,7 +23,7 @@ export class JudgeComponent implements OnInit {
 
   ngOnInit() {
     this.judges = TestJudges.points;
-    
+
     for (let judge of this.judges) {
       judge['memoryMB'] = Math.round(judge['memory'] / 1024);
     }

@@ -18,7 +18,7 @@
       </div>
       <div class="card-block">
         <h4 class="card-title">{{ contest.name }}</h4>
-        <p class="card-text">{{ contest.description }}</p>
+        <p class="card-text">{{ contest.abstract }}</p>
         <a class="card-link" [routerLink]="'/contest/' + contest.id + '/enroll'" *ngIf="contest.state == ContestState.en">Enroll</a>
         <a class="card-link" [routerLink]="'/contest/' + contest.id">Learn More</a>
         <p class="card-text">

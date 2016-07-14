@@ -7,7 +7,6 @@ import { ApiService } from '../util';
 @Component({
   selector: 'my-navbar',
   templateUrl: './navbar.component.html',
-  styleUrls: ['./navbar.component.scss'],
   providers: [ApiService],
   pipes: [TranslatePipe],
   directives: [ROUTER_DIRECTIVES, DROPDOWN_DIRECTIVES]
