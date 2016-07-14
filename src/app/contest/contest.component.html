@@ -19,8 +19,8 @@
       <div class="card-block">
         <h4 class="card-title">{{ contest.name }}</h4>
         <p class="card-text">{{ contest.description }}</p>
-        <a href="#" class="card-link" [routerLink]="'/contest/' + contest.id + '/enroll'" *ngIf="contest.state == ContestState.en">Enroll</a>
-        <a href="#" class="card-link" [routerLink]="'/contest/' + contest.id">Learn More</a>
+        <a class="card-link" [routerLink]="'/contest/' + contest.id + '/enroll'" *ngIf="contest.state == ContestState.en">Enroll</a>
+        <a class="card-link" [routerLink]="'/contest/' + contest.id">Learn More</a>
         <p class="card-text">
           <small class="text-muted">
             <span *ngIf="isClock && contest.state <= ContestState.en">Contest will begin {{ contest.startTime | amTimeAgo }}, last for {{ contest.endTime - contest.startTime | amDuration:'milliseconds' }}.</span>

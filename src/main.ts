@@ -2,6 +2,8 @@ import { enableProdMode } from '@angular/core';
 import { bootstrap } from '@angular/platform-browser-dynamic';
 import { HashLocationStrategy, LocationStrategy } from '@angular/common';
 import { Http, HTTP_PROVIDERS } from '@angular/http';
+import { disableDeprecatedForms, provideForms } from '@angular/forms';
+
 import { TranslateService, TranslateLoader, TranslateStaticLoader } from 'ng2-translate/ng2-translate';
 
 import { AppComponent } from './app/app.component';
@@ -14,6 +16,8 @@ if (process.env.ENV === 'build') {
 bootstrap(AppComponent, [
     HTTP_PROVIDERS,
     APP_ROUTER_PROVIDERS,
+    disableDeprecatedForms(),
+    provideForms(),
     { provide: LocationStrategy, useClass: HashLocationStrategy},
     {
       provide: TranslateLoader,

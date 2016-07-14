@@ -4,7 +4,6 @@ import { TranslatePipe } from 'ng2-translate/ng2-translate';
 import { DateFormatPipe } from 'angular2-moment';
 
 import { JudgeStateLabel } from '../util/judge';
-
 import * as TestJudges from '../test/judge';
 
 @Component({
@@ -25,7 +24,7 @@ export class JudgeComponent implements OnInit {
 
   ngOnInit() {
     this.judges = TestJudges.points;
-
+    
     for (let judge of this.judges) {
       judge['memoryMB'] = Math.round(judge['memory'] / 1024);
     }

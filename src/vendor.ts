@@ -10,5 +10,5 @@ import 'rxjs';
 
 import 'ng2-translate/ng2-translate';
 import 'ng2-bootstrap/ng2-bootstrap';
-
 import 'angular2-moment';
+import 'ng2-codemirror';

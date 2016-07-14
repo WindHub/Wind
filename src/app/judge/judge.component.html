@@ -15,7 +15,7 @@
         <th class="hidden-md-down"><abbr title="Maximum Time">Time</abbr></th>
         <th class="hidden-md-down"><abbr title="Maximum Memory">Mem</abbr></th>
         <th class="hidden-lg-down"><abbr title="Language">Lang</abbr></th>
-        <th class="hidden-lg-down"><abbr title="Length">Len</abbr></th>
+        <th><abbr title="Length">Len</abbr></th>
         <th class="hidden-md-down">Submit</th>
       </tr>
     </thead>
@@ -36,7 +36,7 @@
           <span *ngIf="judge.memory >= 16384">{{ judge.memoryMB }}MB</span>
         </td>
         <td class="hidden-lg-down">{{ 'JUDGE_LANG_' + judge.lang | translate }}</td>
-        <td class="hidden-lg-down">
+        <td>
           <a [routerLink]="'/judge/' + judge.id" *ngIf="judge.isAvailable">{{ judge.length }}B</a>
           <span *ngIf="!judge.isAvailable">{{ judge.length }}B</span>
         </td>

@@ -34,7 +34,7 @@
           <thead>
             <tr>
               <th>Result</th>
-              <th class="hidden-md-down">Score</th>
+              <th>Score</th>
               <th class="hidden-md-down"><abbr title="Maximum Time">Time</abbr></th>
               <th class="hidden-md-down"><abbr title="Maximum Memory">Memory</abbr></th>
             </tr>
@@ -46,7 +46,7 @@
                   {{ 'JUDGE_STATE_ABBR_' + judge.state | translate}}
                 </span>
               </td>
-              <td class="hidden-md-down"><span>{{ judge.score }}/{{ judge.totalScore }}</span></td>
+              <td><span>{{ judge.score }}/{{ judge.totalScore }}</span></td>
               <td class="hidden-md-down">{{ judge.time }}ms</td>
               <td class="hidden-md-down">
                 <span *ngIf="judge.memory < 16384">{{ judge.memory }}KB</span>
@@ -60,9 +60,7 @@
         <div class="card-header">
           Code
         </div>
-        <div class="card-block">
-          <pre>{{ judge.code }}</pre>
-        </div>
+        <codemirror [(ngModel)]="judge.code" [config]="codeConfig"></codemirror>
       </div>
     </div>
   </div>
