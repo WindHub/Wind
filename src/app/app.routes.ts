@@ -1,4 +1,5 @@
 import { provideRouter, RouterConfig } from '@angular/router';
+import { Observable } from 'rxjs/Observable';
 
 import { HomeComponent } from './home';
 import { ProblemComponent, ProblemDetailComponent } from './problem';

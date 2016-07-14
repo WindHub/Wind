@@ -4,7 +4,7 @@ import { TimeAgoPipe, DurationPipe, DateFormatPipe } from 'angular2-moment';
 import { ROUTER_DIRECTIVES } from '@angular/router';
 
 import { ContestState } from '../models/contest';
-import { ContestClass } from '../util/contest';
+import { ContestClass, getContestState } from '../util/contest';
 
 import * as TestContests from '../test/contest';
 
@@ -15,6 +15,7 @@ import * as TestContests from '../test/contest';
   directives: [ROUTER_DIRECTIVES]
 })
 export class ContestComponent implements OnInit {
+
   private contests: any;
   private isClock: boolean;
   private ContestState: any;
@@ -27,20 +28,11 @@ export class ContestComponent implements OnInit {
     this.contests = TestContests.contests;
     this.currentTime = Date.now();
     for (let contest of this.contests) {
-      if (this.currentTime < contest.enrollTime) {
-        contest['state'] = ContestState.pd;
-      } else if (this.currentTime < contest.startTime) {
-        contest['state'] = ContestState.en;
-      } else if (this.currentTime < contest.endTime) {
-        contest['state'] = ContestState.rn;
-      } else {
-        contest['state'] = ContestState.ed;
-      }
+      contest['state'] = getContestState(contest, this.currentTime);
     }
     this.ContestClass = ContestClass;
   }
 
   ngOnInit() {
   }
-
 }

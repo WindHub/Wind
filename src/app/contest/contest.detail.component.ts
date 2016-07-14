@@ -1,10 +1,14 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { ROUTER_DIRECTIVES, ActivatedRoute } from '@angular/router';
+import { Observable } from 'rxjs/Rx';
+
 import { TranslatePipe } from 'ng2-translate/ng2-translate';
 import { TimeAgoPipe, DurationPipe, DateFormatPipe } from 'angular2-moment';
 
 import { ContestState, Contest } from '../models/contest';
 import { ContestClass, getContestState } from '../util/contest';
+
+import { CountdownComponent } from '../util/components';
 
 import * as TestContests from '../test/contest';
 
@@ -12,13 +16,14 @@ import * as TestContests from '../test/contest';
   selector: 'my-contest-detail',
   templateUrl: './contest.detail.component.html',
   pipes: [TranslatePipe, TimeAgoPipe, DurationPipe, DateFormatPipe],
-  directives: [ROUTER_DIRECTIVES]
+  directives: [ROUTER_DIRECTIVES, CountdownComponent]
 })
 export class ContestDetailComponent implements OnInit, OnDestroy {
   private ContestState: any;
   private currentTime: any;
   private ContestClass: any;
   private sub: any;
+  private timer: any;
   private contest: Contest;
   private isProblemAvailable: boolean;
 
@@ -48,10 +53,17 @@ export class ContestDetailComponent implements OnInit, OnDestroy {
         this.isProblemAvailable = false;
       }
     });
+
+    let timer = Observable.timer(0,1000);
+    this.timer = timer.subscribe((t) => {
+      this.currentTime = Date.now();
+      this.contest['state'] = getContestState(this.contest, this.currentTime);
+    });
   }
 
   ngOnDestroy() {
     this.sub.unsubscribe();
+    this.timer.unsubscribe();
   }
 
 }

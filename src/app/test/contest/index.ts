@@ -3,11 +3,11 @@ export let contests = [{
   name: 'WindOJ Test Round',
   abstract: 'Test round',
   description: '<p>这场比赛很好玩啊！大家都要来啊！</p>',
-  enrollTime: new Date('2016/07/09 9:00').getTime(),
-  startTime: new Date('2016/07/12 7:00').getTime(),
-  endTime: new Date('2016/07/12 19:00').getTime(),
+  enrollTime: new Date('2016/07/03 9:00').getTime(),
+  startTime: new Date('2016/07/14 7:00').getTime(),
+  endTime: new Date('2016/07/14 21:00').getTime(),
   isAvailable: true,
-  problems: [{ id: 1, name: 'A+B Problem'}, { id: 1, name: 'A+B Problem'}, { id: 1, name: 'A+B Problem'}],
+  problems: [{ id: 1, name: 'A+B Problem', judge: { sum: 100 }}, { id: 1, name: 'A+B Problem', judge: { sum: 100 }}, { id: 1, name: 'A+B Problem', judge: { sum: 100 }}],
   notifications: [{ origin: { id: 1, name: 'SkyZH'}, time: Date.now(), message: 'A 题有更改。'}]
 }, {
   id: 2,

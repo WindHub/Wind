@@ -11,7 +11,9 @@
           Summary
         </div>
         <div class="card-block" [ngClass]="'bg-' + ContestClass[contest.state]">
-          {{ 'CONTEST_STATE_' + contest.state | translate }}
+          <h2 class="text-xs-center" *ngIf="contest.state == ContestState.en && contest.startTime - currentTime <= 43200000"><my-countdown [milliseconds]="contest.startTime - currentTime"></my-countdown></h2>
+          <h2 class="text-xs-center" *ngIf="contest.state == ContestState.rn"><my-countdown [milliseconds]="contest.endTime - currentTime"></my-countdown></h2>
+          <h3 class="text-xs-center">{{ 'CONTEST_STATE_' + contest.state | translate }}</h3>
         </div>
         <ul class="list-group list-group-flush">
           <li class="list-group-item">

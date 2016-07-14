@@ -25,9 +25,9 @@
         <td class="hidden-md-down"><a [routerLink]="'/problem/' + judge.problem.id">{{ judge.problem.name }}</a></td>
         <td><a [routerLink]="'/user/' + judge.user.id">{{ judge.user.name }}</a></td>
         <td>
-          <span class="label" [ngClass]="'label-' + JudgeLabel[judge.state]">
+          <a class="label" [ngClass]="'label-' + JudgeLabel[judge.state]" [routerLink]="'/judge/' + judge.id">
             {{ 'JUDGE_STATE_ABBR_' + judge.state | translate}}
-          </span>
+          </a>
         </td>
         <td class="hidden-md-down"><span>{{ judge.score }}/{{ judge.totalScore }}</span></td>
         <td class="hidden-md-down">{{ judge.time }}ms</td>
@@ -37,8 +37,7 @@
         </td>
         <td class="hidden-lg-down">{{ 'JUDGE_LANG_' + judge.lang | translate }}</td>
         <td>
-          <a [routerLink]="'/judge/' + judge.id" *ngIf="judge.isAvailable">{{ judge.length }}B</a>
-          <span *ngIf="!judge.isAvailable">{{ judge.length }}B</span>
+          <span>{{ judge.length }}B</span>
         </td>
         <td class="hidden-md-down">{{ judge.submitTime | amDateFormat:'MM/DD HH:mm:ss' }}</td>
       </tr>
