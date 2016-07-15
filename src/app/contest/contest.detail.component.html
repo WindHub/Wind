@@ -11,7 +11,7 @@
           Summary
         </div>
         <div class="card-block" [ngClass]="'bg-' + ContestClass[contest.state]">
-          <h2 class="text-xs-center" *ngIf="contest.state == ContestState.en && contest.startTime - currentTime <= 43200000"><my-countdown [milliseconds]="contest.startTime - currentTime"></my-countdown></h2>
+          <h2 class="text-xs-center" *ngIf="contest.state == ContestState.en"><my-countdown [milliseconds]="contest.startTime - currentTime"></my-countdown></h2>
           <h2 class="text-xs-center" *ngIf="contest.state == ContestState.rn"><my-countdown [milliseconds]="contest.endTime - currentTime"></my-countdown></h2>
           <h3 class="text-xs-center">{{ 'CONTEST_STATE_' + contest.state | translate }}</h3>
         </div>
@@ -30,9 +30,34 @@
           <li class="list-group-item">
             Duration is {{ contest.endTime - contest.startTime | amDuration:'milliseconds' }}
           </li>
+          <li class="list-group-item" *ngIf="contest.state >= ContestState.en">
+            300 Users enrolled in this contest <a href>View all</a>
+          </li>
+          <li class="list-group-item" *ngIf="contest.state >= ContestState.rn">
+            4000 Submissions were judged <a href>View all</a>
+          </li>
         </ul>
         <div class="card-block" *ngIf="contest.state == ContestState.en">
           <a class="btn btn-lg btn-primary btn-block" [routerLink]="'/contest/' + contest.id + '/enroll'">Enroll</a>
+        </div>
+        <div class="card-block" *ngIf="contest.state == ContestState.ed">
+          <a class="btn btn-lg btn-primary btn-block" [routerLink]="'/contest/' + contest.id + '/rank'">View Rank</a>
+        </div>
+      </div>
+      <div class="card card-inverse card-info text-xs-center" *ngFor="let notification of contest.notifications">
+        <div class="card-block">
+          <blockquote class="card-blockquote">
+            <p>{{ notification.message }}</p>
+            <footer>{{ notification.origin.name }} published {{ notification.time | amTimeAgo }}</footer>
+          </blockquote>
+        </div>
+      </div>
+      <div class="card card-inverse card-info text-xs-center" *ngIf="!contest.notifications">
+        <div class="card-block">
+          <blockquote class="card-blockquote">
+            <p>Nothing Here</p>
+            <footer>Notifications will be published here.</footer>
+          </blockquote>
         </div>
       </div>
     </div>

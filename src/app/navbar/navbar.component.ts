@@ -19,7 +19,7 @@ export class NavbarComponent {
         { name: 'problem', link: 'problem' },
         { name: 'contest', link: 'contest' },
         { name: 'judge', link: 'judge' },
-        { name: 'discuss', link: 'discuss' },
+        //{ name: 'discuss', link: 'discuss' },
         { name: 'rank', link: 'rank' }
       ],
       user: [
@@ -29,7 +29,7 @@ export class NavbarComponent {
     },
     login: {
       main: [
-        { name: 'home', link: 'home'}
+        //{ name: 'home', link: 'home'}
       ],
       user: [
         { name: 'profile', link: 'profile' },
