@@ -15,11 +15,6 @@ exports.config = {
     includeStackTrace: false,
     defaultTimeoutInterval: 400000
   },
-  directConnect: true,
-
-  capabilities: {
-    'browserName': 'chrome'
-  },
 
   onPrepare: function () {
     var SpecReporter = require('jasmine-spec-reporter');
@@ -44,20 +39,10 @@ exports.config = {
 
   // restartBrowserBetweenTests: true,
 
-  multiCapabilities: [{
-    browserName: 'firefox',
-    version: '32',
-    platform: 'OS X 10.10',
-    name: "firefox-tests",
-    shardTestFiles: true,
-    maxInstances: 5
-  }, {
-    browserName: 'chrome',
-    version: '41',
-    platform: 'Windows 7',
-    name: "chrome-tests",
-    shardTestFiles: true,
-    maxInstances: 5
+  capabilities: [{
+    'browserName': 'chrome',
+    'tunnel-identifier': process.env.TRAVIS_JOB_NUMBER,
+    'build': process.env.TRAVIS_BUILD_NUMBER
   }],
 
   onComplete: function() {
