@@ -1,4 +1,6 @@
 exports.config = {
+  baseUrl: 'http://localhost:8080/',
+
   specs: [
     'src/**/*.e2e-spec.js'
   ],
@@ -39,7 +41,7 @@ exports.config = {
 
   // restartBrowserBetweenTests: true,
 
-  capabilities: [{
+  multiCapabilities: [{
     'browserName': 'chrome',
     'tunnel-identifier': process.env.TRAVIS_JOB_NUMBER,
     'build': process.env.TRAVIS_BUILD_NUMBER
