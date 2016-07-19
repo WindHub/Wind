@@ -15,7 +15,9 @@ export enum JudgeState {
   unknown,
   ve,
   ac,
-  pe
+  pe,
+  ole,
+  rpd
 }
 
 export class JudgePoint {
