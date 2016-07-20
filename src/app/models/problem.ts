@@ -1,6 +1,6 @@
 import { User } from './user';
 import { JudgeState } from './judge';
-import { Permission } from './Permission';
+import { Permission } from './permission';
 
 export class ProblemLabel {
   public type: string;
