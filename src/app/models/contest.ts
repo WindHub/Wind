@@ -1,6 +1,7 @@
 import { Problem } from './problem';
 import { User } from './user';
 import { DirectMessage } from './pi';
+import { Permission } from './permission';
 
 export enum ContestState {
   pd = 0,
@@ -21,4 +22,5 @@ export class Contest {
   public problems: Problem[];
   public enrolledUsers: User[];
   public notifications: DirectMessage[];
+  public permissions: Permission[];
 }

@@ -1,10 +1,6 @@
 import { User } from './user';
 import { JudgeState } from './judge';
-
-export class ProblemPermission {
-  public type: number;
-  public data: Object;
-}
+import { Permission } from './Permission';
 
 export class ProblemLabel {
   public type: string;
@@ -25,9 +21,9 @@ export class Problem {
   public hint: string;
   public data: ProblemData[];
   public labels: ProblemLabel[];
-  public limits: Object;
-  public judge: Object;
-  public permissions: ProblemPermission[];
+  public limits: {};
+  public judge: {};
+  public permissions: Permission[];
   public contributors: User[];
   public state: JudgeState;
 }
