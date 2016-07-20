@@ -8,8 +8,8 @@ import 'codemirror/mode/clike/clike';
 import 'codemirror/mode/python/python';
 
 
-import { JudgeStateLabel } from '../util/judge';
-import { CodeLanguageMIME } from '../util/lang';
+import { JudgeStateLabel } from '../utils/judge';
+import { CodeLanguageMIME } from '../utils/lang';
 
 import * as TestJudges from '../test/judge';
 

@@ -5,10 +5,10 @@ import { Observable } from 'rxjs/Rx';
 import { TranslatePipe } from 'ng2-translate/ng2-translate';
 import { TimeAgoPipe, DurationPipe, DateFormatPipe } from 'angular2-moment';
 
-import { ContestState, Contest } from '../models/contest';
-import { ContestClass, getContestState } from '../util/contest';
+import { ContestState, Contest } from '../models';
+import { ContestClass, getContestState } from '../utils/contest';
 
-import { CountdownComponent } from '../util/components';
+import { CountdownComponent } from '../utils/components';
 
 import * as TestContests from '../test/contest';
 

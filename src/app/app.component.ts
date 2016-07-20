@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { ROUTER_DIRECTIVES } from '@angular/router';
 import { TranslateService, TranslatePipe } from 'ng2-translate/ng2-translate';
-import { ApiService } from './util';
+import { ApiService } from './utils';
 
 import { NavbarComponent } from './navbar';
 

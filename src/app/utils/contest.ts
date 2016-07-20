@@ -1,4 +1,4 @@
-import { Contest, ContestState } from '../models/contest';
+import { Contest, ContestState } from '../models';
 
 export const ContestClass = [
   'default',

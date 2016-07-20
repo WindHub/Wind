@@ -6,7 +6,7 @@ import '@angular/http';
 import '@angular/router';
 import '@angular/forms';
 
-import 'rxjs';
+import 'rxjs/Rx';
 
 import 'ng2-translate/ng2-translate';
 import 'ng2-bootstrap/ng2-bootstrap';

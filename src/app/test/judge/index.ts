@@ -1,4 +1,4 @@
-import { JudgeState, JudgeLang } from '../../models/judge';
+import { JudgeState, JudgeLang } from '../../models';
 
 export let points = [];
 

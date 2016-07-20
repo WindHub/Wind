@@ -10,7 +10,7 @@ import { MockBackend } from '@angular/http/testing';
 import { provide } from '@angular/core';
 
 // Load the implementations that should be tested
-import { ApiService } from './util';
+import { ApiService } from './utils';
 import { AppComponent } from './app.component';
 
 describe('App', () => {

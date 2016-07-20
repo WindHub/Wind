@@ -3,7 +3,7 @@ import { ROUTER_DIRECTIVES } from '@angular/router';
 import { TranslatePipe } from 'ng2-translate/ng2-translate';
 import { DateFormatPipe } from 'angular2-moment';
 
-import { JudgeStateLabel } from '../util/judge';
+import { JudgeStateLabel } from '../utils/judge';
 import * as TestJudges from '../test/judge';
 
 @Component({

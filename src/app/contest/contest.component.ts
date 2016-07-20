@@ -3,8 +3,8 @@ import { TranslatePipe } from 'ng2-translate/ng2-translate';
 import { TimeAgoPipe, DurationPipe, DateFormatPipe } from 'angular2-moment';
 import { ROUTER_DIRECTIVES } from '@angular/router';
 
-import { ContestState } from '../models/contest';
-import { ContestClass, getContestState } from '../util/contest';
+import { ContestState } from '../models';
+import { ContestClass, getContestState } from '../utils/contest';
 
 import * as TestContests from '../test/contest';
 
